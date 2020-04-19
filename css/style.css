@@ -47,6 +47,7 @@ body {
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
     line-height: 1.6;
+    padding: 15px;
 }
 
 section {
@@ -69,23 +70,73 @@ strong {
 
 /* Buttons */
 
-.btn {
-    display: inline-block;
-    padding: .5em 2.5em;
-    background: var(--clr-accent);
-    color: var(--clr-dark);
-    text-decoration: none;
-    cursor: pointer;
-    font-size: .8rem;
+.btn:link,
+.btn:visited {
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: var(--fw-bold);
-    transition: transform 200ms ease-in-out;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .5s;
+    position: relative;    
 }
 
 .btn:hover {
-    transform: scale(1.1);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px var(--clr-accent); 
 }
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
+}
+
+.btn-green {
+    background-color: var(--clr-accent);
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-green::after {
+    background-color: var(--clr-accent);
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
 
 /* Typography */
 
@@ -112,17 +163,39 @@ h3 {
     margin-bottom: .25em;
 }
 
+.section__title--work {
+    letter-spacing: 8px;
+}
+
 .section__title--intro {
     font-weight: var(--fw-reg);
+    letter-spacing: 12px;
+
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
 }
 
 .section__title--intro strong {
     display: block;
+
+    animation-name: moveInRight;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
 }
 
 .section__subtitle {
     margin: 0;
     font-size: var(--fs-h3);
+
+    animation-name: moveInLeft;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+}
+
+.section__subtitle--intro {
+    font-size: 2.3rem;
+    letter-spacing: 15px;
 }
 
 .section__subtitle--intro,
@@ -131,12 +204,47 @@ h3 {
     padding: .25em 1em;
     font-family: var(--ff-secondary);
     margin-bottom: 1em;
+
 }
 
 .section__subtitle--work {
     color: var(--clr-accent);
     font-weight: var(--fw-bold);
     margin-bottom: 2em;
+    letter-spacing: 8px;
+    font-size: 2rem;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(70px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100);
+    }
+
+    80% {
+        transform: translateX(-70px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
 }
 
 /* Header */
@@ -298,7 +406,9 @@ header {
 
 .my-services {
     background-color: var(--clr-dark);
-    background-image: url(../img/services-bg.jpg);
+    background-image: linear-gradient(
+        to right bottom,
+         rgba(95, 255, 67, 0.281), rgba(40, 180, 131, 0.062)), url(../img/services-bg.jpg);
     background-size: cover;
     /*background-blend-mode: multiply;*/
     color: var(--clr-light);
@@ -387,7 +497,7 @@ header {
 /* My work */
 
 .my-work {
-    background-color: var(--clr-dark);
+    background-color: rgba(0, 0, 0, 0.767);
     color: var(--clr-light);
     text-align: center;
 }
@@ -421,11 +531,11 @@ header {
 /* Footer */
 
 .footer {
-    background: #111;
+    background: rgba(18, 18, 18, 0.63);
     color: var(--clr-accent);
     text-align: center;
     padding: 2.5em 0;
-    font-size: var(--fs-h3);
+    font-size: 2rem;
 }
 
 .footer a {
