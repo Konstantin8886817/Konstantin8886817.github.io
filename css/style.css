@@ -13,7 +13,7 @@
 
     --clr-light: #fff;
     --clr-dark: #303030;
-    --clr-accent: #16e0bd;
+    --clr-accent: rgba(22, 224, 190, 0.733);
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -47,7 +47,6 @@ body {
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
     line-height: 1.6;
-    padding: 15px;
 }
 
 section {
@@ -93,7 +92,7 @@ strong {
 
 .btn-green {
     background-color: var(--clr-accent);
-    color: #fff;
+    color: rgba(255, 255, 255, 0.801);
     letter-spacing: 2px;
     font-weight: bold;
 }
@@ -156,7 +155,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     letter-spacing: 5px;
 }
 
@@ -165,15 +164,15 @@ h3 {
 }
 
 .section__title--work {
-    letter-spacing: 8px;
+    letter-spacing: 5px;
 }
 
 .section__title--intro {
     font-weight: var(--fw-reg);
-    letter-spacing: 12px;
+    letter-spacing: 10px;
 
     animation-name: moveInLeft;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-timing-function: ease-in;
 }
 
@@ -181,7 +180,7 @@ h3 {
     display: block;
 
     animation-name: moveInRight;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-timing-function: ease-out;
 }
 
@@ -195,8 +194,8 @@ h3 {
 }
 
 .section__subtitle--intro {
-    font-size: 2.3rem;
-    letter-spacing: 15px;
+    font-size: 1.7rem;
+    letter-spacing: 10px;
 }
 
 .section__subtitle--intro,
@@ -212,7 +211,7 @@ h3 {
     color: var(--clr-accent);
     font-weight: var(--fw-bold);
     margin-bottom: 2em;
-    letter-spacing: 8px;
+    letter-spacing: 6px;
     font-size: 2rem;
 }
 
@@ -289,9 +288,9 @@ header {
 .nav__link {
     color: inherit;
     font-weight: var(--fw-bold);
-    font-size: var(--fs-h2);
+    font-size: 1.6rem;
     text-decoration: none;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
 }
 
 .nav__link:hover {
@@ -537,7 +536,7 @@ header {
     color: var(--clr-accent);
     text-align: center;
     padding: 2.5em 0;
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 .footer a {
