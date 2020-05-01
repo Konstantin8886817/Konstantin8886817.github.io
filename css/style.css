@@ -77,12 +77,12 @@ strong {
     display: inline-block;
     border-radius: 100px;
     transition: all .5s;
-    position: relative;    
+    position: relative;
 }
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px var(--clr-accent); 
+    box-shadow: 0 10px 20px var(--clr-accent);
 }
 
 .btn:active {
@@ -187,10 +187,16 @@ h3 {
 .section__subtitle {
     margin: 0;
     font-size: var(--fs-h3);
+    transition: all .2s;
 
     animation-name: moveInLeft;
     animation-duration: 5s;
     animation-timing-function: ease-in-out;
+}
+
+.section__subtitle:hover {
+    transform: skewX(5deg) scale(1.1);
+    box-shadow: 0.5rem 1rem 2rem rgba(22, 224, 190, 0.562);
 }
 
 .section__subtitle--intro {
@@ -257,6 +263,13 @@ header {
 
 .logo {
     max-width: 40px;
+    transition: all .2s;
+}
+
+.logo:hover {
+    transform: scale(2.2) translateY(.5rem);
+    box-shadow: 0 1.5rem 2rem rgba(22, 224, 190, 0.562);
+    z-index: 20;
 }
 
 .nav {
@@ -269,9 +282,9 @@ header {
     right: 0;
     z-index: 100;
 
-    
+
     transform: translateX(100%);
-    transition: transform 250ms cubic-bezier(.5,0,.5,1);
+    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
 }
 
 .nav__list {
@@ -309,7 +322,7 @@ header {
 }
 
 .nav-open .nav {
-    transform: translateX(0);    
+    transform: translateX(0);
 }
 
 .nav-open .nav-toggle {
@@ -372,7 +385,16 @@ header {
 }
 
 .intro__img {
+    border-radius: 2px;
+    z-index: 10;
     box-shadow: var(--bs);
+    transition: all .2s;
+}
+
+.intro__img:hover {
+    transform: scale(1.3) translateX(-.5rem);
+    box-shadow: 0 1.5rem 2rem rgba(22, 224, 190, 0.562);
+    z-index: 20;
 }
 
 .section__subtitle--intro {
@@ -413,9 +435,8 @@ header {
 
 .my-services {
     background-color: var(--clr-dark);
-    background-image: linear-gradient(
-        to right bottom,
-         rgba(95, 255, 67, 0.281), rgba(40, 180, 131, 0.062)), url(../img/services-bg.jpg);
+    background-image: linear-gradient(to right bottom,
+            rgba(95, 255, 67, 0.281), rgba(40, 180, 131, 0.062)), url(../img/services-bg.jpg);
     background-size: cover;
     /*background-blend-mode: multiply;*/
     color: var(--clr-light);
@@ -467,6 +488,13 @@ header {
 
 .about-me__img {
     box-shadow: var(--bs);
+    transition: all .2s;
+}
+
+.about-me__img:hover {
+    transform: scale(1.2) translateY(-.5rem);
+    box-shadow: 0 1.5rem 2rem rgba(22, 224, 190, 0.562);
+    z-index: 20;
 }
 
 @media (min-width: 600px) {
@@ -562,7 +590,8 @@ header {
 .footer__link:hover {
     transform: scale(1.8);
     opacity: .75;
-    box-shadow: 0 10px 20px rgba(22, 224, 190, 0.733);
+    box-shadow: 0 10px 20px rgba(22, 224, 190, 0.418);
+
 }
 
 .social-list {
